@@ -1,0 +1,525 @@
+/* ---------------------------
+   styles.css
+   Página inspirada visualmente (header + banner + seção)
+   --------------------------- */
+
+/* RESET / base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #333;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+}
+
+/* util container (mobile-first: container fills viewport with side padding)
+   Desktop layout restored via media query below */
+.container { width: 100%; max-width: 100%; padding: 0 16px; margin: 0 auto; }
+
+/* Mobile-first base adjustments: stack sections, show hamburger, fluid images */
+/* Hide desktop nav and show the hamburger by default (mobile-first) */
+.main-nav { display: none; }
+.hamburguer { display: block; }
+
+/* Header compact for mobile */
+/* Desktop rules (restore wide layout) */
+@media (min-width: 769px) {
+  /* container centralizado com largura limitada */
+  .container { width: 95%; max-width: 1180px; padding: 0; }
+
+  /* header: mostra nav desktop */
+  .main-nav { display: block; }
+  .hamburguer { display: none; }
+
+  /* hero volta a ser em duas colunas */
+  .hero-inner { flex-direction: row; gap: 40px; width: 98%; max-width: 1400px; margin: 0 auto; align-items: center; }
+  .hero-left { flex: 1 1 48%; }
+  .hero-right { flex: 1 1 52%; display:flex; justify-content:flex-end; }
+  /* permitir que a imagem fique maior em desktop (mais presença) */
+  .hero-img { max-width: 900px; }
+
+  /* desktop banner: show desktop banner and let it fill the hero container */
+  .banner-desk { display: block; width: 100%; height: auto; }
+  /* hide mobile-only banner on desktop */
+  .banner-mobile { display: none; }
+
+  /* Sobre volta layout em colunas */
+  .sobre .container { display: flex; gap: 40px; align-items: center; flex-direction: row; }
+  .sobre-left { transform: translateY(-18px); }
+  .sobre-right { flex: 1 1 50%; }
+  /* mostrar a seção 'sobre' também no desktop */
+  .sobre { display: block; }
+}
+.header-inner { padding: 12px 16px; }
+
+/* Make the hero stack on mobile */
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero-right { justify-content: center; }
+.hero-img { max-width: 100%; width: 100%; height: auto; border-radius: 6px; }
+
+/* Sobre: stack columns on mobile */
+.sobre { display: block; }
+.sobre .container { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+.sobre-left { transform: translateY(0); }
+.sobre-right { width: 100%; }
+
+/* Make footer padding smaller on mobile */
+.site-footer { padding: 18px 0; }
+
+
+
+
+
+/* classe para mostrar painel */
+.acessibilidade-painel.show { display: block; }
+
+.line {
+  height: 30px;
+  background: linear-gradient(to right, #C70A2C, #B61C74);
+  
+}
+
+/* ============================
+   Header (faixa branca)
+   ============================ */
+.site-header {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+}
+
+/* area interna do header (logo + nav + hamburger) */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 22px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* logo */
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+/* nav desktop */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+.main-nav a {
+  color: #B71C1C; /* vermelho Bradesco */
+  text-decoration: none;
+  font-weight: 60;
+  font-size: 15px;
+  padding-bottom: 4px;
+  transition: color .18s ease, border-bottom .18s ease;
+}
+
+.main-nav a:hover {
+  color: #D61C4E;
+  border-bottom: 2px solid #D61C4E;
+}
+
+/* destaque (Resgatar) com borda pontilhada no print original - aqui deixamos com caixa) */
+.main-nav a.destaque {
+  border: 1px dotted #D61C4E;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: white;
+}
+
+/* hamburguer (mobile) */
+.hamburguer {
+  display: none; /* aparece apenas em mobile rules */
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburguer .bar {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #B71C1C;
+  margin: 5px 0;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+
+
+/* Remove margens padrão e define base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+/* ===== Banner ===== */
+.banner {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Imagens do banner */
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mostra apenas o banner de desktop por padrão */
+.banner-desk {
+  display: block;
+}
+
+.banner-mobile {
+  display: none;
+}
+
+/* Quando a tela for menor que 768px, troca pro banner mobile */
+@media (max-width: 768px) {
+  .banner-desk {
+    display: none;
+  }
+  .banner-mobile {
+    display: block;
+  }
+}
+
+
+/* ============================
+   Seção "O que é a Livelo"
+   ============================ */
+.sobre { background: #fff; padding: 64px 0; }
+
+.sobre .container { display: flex; gap: 40px; align-items: center; }
+
+.sobre-left { flex: 1 1 45%; transform: translateY(-18px); transition: transform .18s ease; }
+.section-title {
+  color: #4b4b4b;
+  letter-spacing: 1px;
+  font-size: 26px;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.livelo-logo { display:block; margin: 8px 0 18px; height: 60px; }
+
+.sobre-text {
+  color: #6b6b6b;
+  max-width: 560px;
+}
+
+/* imagem ao lado direito */
+.sobre-right { flex: 1 1 50%; }
+.sobre-img { width: 100%; border-radius: 8px; }
+
+/* Ajustes responsivos para o deslocamento vertical da coluna esquerda */
+@media (max-width: 980px) {
+  .sobre-left { transform: translateY(-8px); }
+}
+
+@media (max-width: 768px) {
+  /* em telas pequenas removemos o deslocamento para evitar sobreposição */
+  .sobre-left { transform: translateY(0); }
+}
+
+/* ============================
+   Footer simples
+   ============================ */
+.site-footer { background: #fafafa; padding: 24px 0; text-align: center; color: #7b7b7b; }
+
+/* ============================
+   Responsividade
+   ============================ */
+@media (max-width: 980px) {
+  .hero-title { font-size: 28px; }
+  .hero-sub { font-size: 18px; }
+  .hero-inner { flex-direction: column; align-items: stretch; }
+  .hero-right { justify-content: center; order: 2; margin-top: 18px; }
+}
+
+@media (max-width: 768px) {
+
+  /* header: menu vira oculto e hamburguer aparece */
+  .main-nav { display: none; }
+  .hamburguer { display: block; }
+
+  .header-inner { padding: 12px 16px; }
+
+  /* menu mobile (quando mostrado) */
+  .main-nav.mobile {
+    display: block;
+    position: absolute;
+    top: 62px;
+    right: 16px;
+    background: #fff;
+    border: 2px solid #f1b0c2;
+    border-radius: 8px;
+    padding: 12px;
+    z-index: 1100;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  }
+
+  .main-nav.mobile ul { display: flex; flex-direction: column; gap: 8px; }
+  .main-nav.mobile a { font-size: 17px; padding: 8px 6px; }
+
+  /* acessibilidade painel posicionado melhor em mobile */
+  .acessibilidade-container { top: 8px; right: 10px; }
+
+  /* aumentar visualmente o banner no celular */
+  /* Mobile: make banner fill the width and stay centered; remove transforms */
+  .banner-mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    margin: 0;
+    transform: none;
+    transition: none;
+    object-fit: cover;
+  }
+
+
+/* Small-screen fallback to avoid overflow on very narrow devices */
+@media (max-width: 360px) {
+  .banner { height: 320px; }
+  .banner picture, .banner-img, .hero-img { width: 100%; height: 100%; object-fit: cover; }
+}
+  /* reduzimos border-radius para ficar mais alinhado às bordas */
+  .hero-img { border-radius: 4px; }
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* SEÇÃO PRINCIPAL */
+.cadastro-section {
+  background: linear-gradient(135deg, #c30e2e, #d11a68);
+  color: white;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTAINER DE TEXTO */
+.cadastro-container {
+  max-width: 800px;
+  text-align: left;
+}
+
+.cadastro-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.cadastro-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* CARTÃO BRANCO */
+.cadastro-card {
+  background: #fff;
+  border-radius: 12px;
+  text-align: center;
+  padding: 40px 20px;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo-livelo {
+  width: 200px;
+  margin-bottom: 25px;
+}
+
+.texto-card {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.btn-criar {
+  background-color: #c30e2e;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-criar:hover {
+  background-color: #a30b25;
+}
+
+/* Remove margens padrão */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Exemplo do conteúdo (só pra visualizar o fundo) */
+.conteudo {
+  padding: 60px;
+  background: #c8102e;
+  color: white;
+  font-family: Arial, sans-serif;
+  min-height: 60vh;
+}
+
+/* Rodapé */
+.rodape {
+  position: relative;
+  width: 100vw; /* largura total da tela */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw; /* garante que encoste nas bordas */
+  margin-right: -50vw;
+  background: linear-gradient(90deg, #ff0095 0%, #c8102e 100%);
+  color: rgb(255, 255, 255);
+  font-family: Arial, sans-serif;
+  padding: 20px 60px;
+  box-sizing: border-box;
+}
+
+/* Container principal */
+.rodape-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Lado esquerdo */
+.rodape-esquerda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rodape-titulo {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 10px;
+}
+
+.redes-sociais a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid white;
+  border-radius: 70%;
+  transition: all 0.3s ease;
+}
+
+.redes-sociais a:hover {
+  background: white;
+}
+
+.redes-sociais img {
+  width: 30px;
+  height: 15px;
+  filter: invert(1);
+  transition: all 0.3s ease;
+}
+
+.redes-sociais a:hover img {
+  filter: invert(0);
+}
+
+/* Centro */
+.rodape-centro {
+     color: rgba(255, 255, 255, 0.699); /* fundo totalmente transparente */
+
+  text-align: justify;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* Direita */
+.rodape-direita img {
+  width: 110px;
+  ;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .rodape-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .rodape-esquerda {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .rodape-direita img {
+    width: 90px;
+  }
+}
+
+footer {
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    background: linear-gradient(90deg, #ba004a, #d4145a, #c70039);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+

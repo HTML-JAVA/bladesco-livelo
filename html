@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>banco.bradesco</title>
+
+  <!-- estilos -->
+  <link rel="stylesheet" href="style.css">
+
+
+  <!-- Fontes (opcional, mais parecido com sites corporativos) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  
+  <main>
+
+    <div class="line"></div>
+   
+
+  <!-- ---------- Header (faixa branca com logo e menu) ---------- -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+
+      <!-- logo (troque o src se quiser) -->
+      <div class="logo-wrap">
+        <img src="https://assets.bradesco/content/dam/portal-bradesco/cartoes/hotsitefidelidade/img/logo.png"
+             alt="Bradesco - Logo" class="logo-img">
+      </div>
+
+      <!-- botão hamburguer (aparece apenas em telas pequenas) -->
+      <button id="btnMenu" class="hamburguer" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- navegação principal -->
+      <nav id="mainNav" class="main-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+         
+          <li><a class="destaque" href="#">Resgatar</a></li>
+          <li><a href="https://banco.bradesco/html/classic/atendimento/fale-conosco/perguntas-frequentes.shtm">Dúvidas Frequentes</a></li>
+         
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ---------- Banner principal vermelho ---------- -->
+  <section class="banner" role="region" aria-label="Banner principal">
+    <!-- Banner Desktop -->
+    <img
+      src="https://assets.bradesco/content/dam/portal-bradesco/cartoes/hotsitefidelidade/img/banner.png"
+      alt="Banner Bradesco Desktop"
+      class="banner-img banner-desk"
+    >
+
+    <!-- Banner Mobile -->
+    <img
+      src="https://assets.bradesco/content/dam/portal-bradesco/cartoes/hotsitefidelidade/img/banner-mobile.png"
+      alt="Banner Bradesco Mobile"
+      class="banner-img banner-mobile">
+
+  <!-- ---------- Seção "O que é a Livelo" ---------- -->
+  <section class="sobre" id="o-que-e" role="region" aria-labelledby="titulo-sobre">
+    <div class="container">
+      <div class="sobre-left">
+        <h3 id="titulo-sobre" class="section-title">O QUE É A</h3>
+      <img src="https://assets.bradesco/content/dam/portal-bradesco/cartoes/hotsitefidelidade/img/logo-livelo.svg" alt="" style="max-width: 300px; margin-left: -45px;">
+        <p class="title-livelo">
+        A Livelo é mais uma empresa Bradesco, criada exclusivamente para ampliar sua experiência de resgates de
+            recompensas. Por meio dela, seus pontos poderão ser trocados de um jeito muito mais fácil e prático.
+        </p>
+      </div>
+
+      <div class="sobre-right">
+       <img src="https://assets.bradesco/content/dam/portal-bradesco/cartoes/hotsitefidelidade/img/o-que-e.png" alt="">
+      </div>
+    </div>
+  </section>
+
+ <section class="cadastro-section">
+    <div class="cadastro-container">
+      <h2>COMO Resgatar ?</h2>
+      <p>Para resgatar basta ter uma conta Bladesco, e fornecer dados fundamentais.</p>
+
+      <p>Depois de resgatar seus pontos, voçê podera aproveitar, suas compras com desconto a cima da média, com mais de 800mil items com promoções de até 80% em supermercados. </p>
+
+      <div class="cadastro-card">
+        <img src="https://assets.bradesco/content/dam/portal-bradesco/cartoes/hotsitefidelidade/img/logo.png" alt="Logo Livelo" class="logo-livelo">
+        <p class="texto-card">
+          Para começar a acumular pontos,<br>
+          cadastre-se na <strong>Livelo.</strong>
+        </p>
+        <button class="btn-criar">Resgate seus pontos</button>
+      </div>
+      <br>
+</div> <!-- FECHA a div anterior que estava prendendo o footer -->
+<!-- ⬆️ Muito importante! -->
+</main>
+
+
+<footer class="rodape">
+    <div class="rodape-container">
+
+        <!-- Lado esquerdo -->
+        <div class="rodape-esquerda">
+            <span class="rodape-titulo">ACOMPANHE:</span>
+            <div class="redes-sociais">
+                <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></a>
+                <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok"></a>
+            </div>
+        </div>
+
+        <!-- Centro -->
+        <div class="rodape-centro">
+            <p>
+                Banco Bradesco SA | CNPJ: 60.746.948.0001-12<br>
+                Cidade De Deus, S/Nº Vila Yara | Osasco | SP | CEP: 06029-900
+            </p>
+        </div>
+
+        <!-- Direita -->
+        <div class="rodape-direita">
+            <img src="https://assets.bradesco/content/dam/portal-bradesco/assets/classic/svg/logo-mobile.svg"
+                alt="Logo Bradesco" class="logo-bradesco">
+        </div>
+
+    </div>
+</footer>
+
+
+<!-- script -->
+<script src="script.java"></script>
+</body>
+</html>
+
+
+
+  <!-- script -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
